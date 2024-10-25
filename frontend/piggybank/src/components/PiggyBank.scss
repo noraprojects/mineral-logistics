@@ -1,0 +1,35 @@
+.piggy-bank {
+  position: relative;
+  aspect-ratio: 1.42; // calculated manually from the unscaled piggy.png image width: 20rem;
+  background-image: url('../assets/img/piggy.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  .fields {
+    transform: translateY(-1rem);
+    color: black;
+    .owner {
+      font-size: 1rem;
+    }
+    .balance {
+      font-weight: bold;
+      font-size: 1.5rem;
+    } }
+}
+
+.owner-badge {
+  position: absolute;
+  right: 4em;
+  top: 0;
+  width: 4rem;
+  height: 4rem;
+  overflow: hidden;
+  background-color: #F6C9B3; border-radius: 50%;
+  border: 2px solid rgb(241, 248, 253); box-shadow: 0 1px 3px rgba(0, 0, 0,
+        0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  img {
+    width: 100%;
+  } }
