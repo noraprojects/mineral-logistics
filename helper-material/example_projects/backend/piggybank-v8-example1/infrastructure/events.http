@@ -1,0 +1,42 @@
+### Get access token with normal user
+
+POST http://localhost:8180/realms/piggyBankRealm/protocol/openid-connect/token HTTP/1.1
+Content-Type: application/x-www-form-urlencoded
+
+client_id = piggyBankFamily &
+client_secret = oQyZvg2aH5fOs38Ay2p4OGsrgZF41g2s &
+username = bobby &
+password = password &
+grant_type = password &
+scope = openid
+
+//saving the access token
+> {%
+    client.global.set("access_token", response.body.access_token);
+%}
+
+
+###  donating money to bobby
+POST http://localhost:8090/api/money/21/person/{{bobby}} HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer {{access_token}}
+
+
+###  buy some candy
+DELETE http://localhost:8091/api/money/20/person/{{bobby}} HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer {{access_token}}
+
+
+
+### query balance for bobby
+GET http://localhost:8091/api/person/{{bobby}} HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer {{access_token}}
+
+
+### query balance for today
+GET http://localhost:8091/api/person/{{bobby}}/start/2023-10-01/end/2023-10-01 HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer {{access_token}}
+

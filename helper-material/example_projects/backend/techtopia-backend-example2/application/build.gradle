@@ -1,0 +1,21 @@
+plugins {
+    id 'module-config'
+    id 'spring-conventions'
+}
+
+dependencies {
+    implementation project(":common")
+    implementation project(':Ticketing')
+    implementation project(':Admission')
+    implementation project(':Park')
+    implementation project(':ParkManagement')
+
+
+    implementation 'org.springframework.boot:spring-boot-starter-amqp'
+
+    implementation 'org.springframework.boot:spring-boot-starter-oauth2-resource-server'
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+
+    implementation "com.fasterxml.jackson.datatype:jackson-datatype-jsr310"
+
+}

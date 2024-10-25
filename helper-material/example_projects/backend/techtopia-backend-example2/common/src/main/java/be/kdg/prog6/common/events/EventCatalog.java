@@ -1,0 +1,17 @@
+package be.kdg.prog6.common.events;
+
+public enum EventCatalog {
+
+
+    REFRESHMENT_STAND_CREATED,
+    REFRESHMENT_STAND_REMOVED,
+    VISITOR_ADMITTED,
+    VISITOR_DISMISSED,
+    ATTRACTION_QUEUE_REACHED,
+    ATTRACTION_THROUGHPUT_UPDATE,
+    TICKETING_RECEIVED_TICKET,
+    TICKET_ACTIVITY_CREATED, //this should better be split up in 2 events
+//    AGENDA_ACTIVITY_CREATED; // same
+
+
+}

@@ -1,0 +1,8 @@
+rootProject.name = 'template'
+
+include 'application'
+include 'common'
+include 'Ticketing'
+include 'Admission'
+include 'Park'
+include 'ParkManagement'

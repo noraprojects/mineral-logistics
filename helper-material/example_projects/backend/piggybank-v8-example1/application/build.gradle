@@ -1,0 +1,19 @@
+plugins {
+    id 'piggybank-config'
+    id 'spring-conventions'
+}
+
+dependencies {
+    implementation project(":common")
+    implementation project(":family")
+    implementation project(":grandparents")
+
+    implementation 'org.springframework.boot:spring-boot-starter-amqp'
+
+    implementation 'org.springframework.boot:spring-boot-starter-oauth2-resource-server'
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+
+    implementation "com.fasterxml.jackson.datatype:jackson-datatype-jsr310"
+
+
+}

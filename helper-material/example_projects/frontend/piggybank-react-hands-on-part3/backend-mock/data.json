@@ -1,0 +1,71 @@
+{
+  "accounts": [
+    {
+      "id": "1",
+      "balance": 110,
+      "owner": {
+        "id": "1",
+        "name": "Bobby",
+        "profilePic": "https://img.freepik.com/free-vector/smiling-young-man-glasses_1308-174373.jpg?size=626&ext=jpg&ga=GA1.1.2008272138.1728172800&semt=ais_hybrid"
+      }
+    },
+    {
+      "id": "2",
+      "balance": 0,
+      "owner": {
+        "id": "2",
+        "name": "Joey",
+        "profilePic": "https://img.freepik.com/free-vector/young-man-glasses-hoodie_1308-174658.jpg?uid=R81303125&ga=GA1.1.684872613.1713387229&semt=ais_hybrid"
+      }
+    },
+    {
+      "id": "3",
+      "balance": 0,
+      "owner": {
+        "id": "3",
+        "name": "Linda",
+        "profilePic": "https://img.freepik.com/free-vector/stylish-woman-with-headwrap_1308-175812.jpg?t=st=1729446385~exp=1729449985~hmac=9f5e03202002aea89360dafd17e31047382eef02408e7c28b985965450311a5a&w=740"
+      }
+    }
+  ],
+  "donations": [
+    {
+      "id": "1",
+      "accountId": "1",
+      "amount": 30,
+      "timestamp": "2024-10-09T12:00:00",
+      "shortMessage": "Garden",
+      "longMessage": "Thank you for all the hard work in my garden!",
+      "sponsor": {
+        "id": "4",
+        "name": "Grandma",
+        "profilePic": "https://img.freepik.com/free-vector/cheerful-grandmother-cartoon-portrait_1308-164977.jpg?uid=R81303125&ga=GA1.1.684872613.1713387229&semt=ais_hybrid-rr-similar"
+      }
+    },
+    {
+      "id": "2",
+      "accountId": "1",
+      "amount": 70,
+      "timestamp": "2024-10-09T12:00:00",
+      "shortMessage": "Happy Birthday",
+      "sponsor": {
+        "id": "4",
+        "name": "Grandma",
+        "profilePic": "https://img.freepik.com/free-vector/cheerful-grandmother-cartoon-portrait_1308-164977.jpg?uid=R81303125&ga=GA1.1.684872613.1713387229&semt=ais_hybrid-rr-similar"
+      }
+    },
+    {
+      "amount": "10",
+      "shortMessage": "A new donation",
+      "longMessage": "This is just a test",
+      "timestamp": "2024-10-15T11:07:58.491Z",
+      "accountId": "1",
+      "sponsor": {
+        "id": "4",
+        "name": "Grandma",
+        "profilePic": "https://img.freepik.com/free-vector/cheerful-grandmother-cartoon-portrait_1308-164977.jpg?uid=R81303125&ga=GA1.1.684872613.1713387229&semt=ais_hybrid-rr-similar"
+      },
+      "id": "j-ZLHBw"
+    }
+  ]
+}

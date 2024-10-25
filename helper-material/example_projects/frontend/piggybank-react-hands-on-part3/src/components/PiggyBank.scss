@@ -1,0 +1,36 @@
+.piggy-bank {
+  position: relative; // needed to absolute postion the badge
+  aspect-ratio: 1.42; // calculated manually from the unscaled piggy.png image
+  width: 30rem;
+  background-image: url('../assets/img/piggy.png');
+  background-size: contain;
+  background-position: top;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+
+  .fields {
+    text-align: center;
+    margin-top: 5rem;
+    color: black;
+
+    .owner {
+      font-size: 2rem;
+      font-weight: bold;
+      font-family: "Dawning of a New Day", cursive;
+    }
+
+    .balance {
+      transform: translateY(-0.8rem);
+      font-weight: 600;
+      font-size: 3.5rem;
+      opacity: 0.8;
+    }
+
+    .currency {
+      font-size: 1.5rem;
+      font-weight: 300;
+    }
+  }
+}

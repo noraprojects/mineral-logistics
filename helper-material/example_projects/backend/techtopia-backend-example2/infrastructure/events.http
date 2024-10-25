@@ -1,0 +1,180 @@
+POST http://localhost:8180/realms/parkRealm/protocol/openid-connect/token HTTP/1.1
+Content-Type: application/x-www-form-urlencoded
+
+client_id=techtopia-backend&client_secret=0RKkYXpCjxAJ8VnAZxezKc8GBITCceno&username=admin&password=admin&grant_type=password&scope=openid
+> {%
+    client.global.set("access_token", response.body.access_token);
+%}
+
+
+
+###dont forget to get the id from attatraction from db
+###  go inside attraction
+POST http://localhost:8094/api/ticket/{{bobby}}/attraction/ef01c728-ce36-46b5-a110-84f53fdd9661 HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer {{access_token}}
+
+
+###
+GET http://localhost:8094/api/attraction/6eaadc44-05a3-4f6e-8903-e97a3d7861c9 HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer {{access_token}}
+
+
+
+
+
+
+#enter the park
+###
+POST http://localhost:8099/api/code/{{bobby}} HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer {{access_token}}
+
+
+#get the park visitor count
+###
+GET http://localhost:8095/api/park/visitorCount HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer {{access_token}}
+
+
+
+
+
+#leave the park
+###
+POST http://localhost:8099/api/leave/{{bobby}} HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer {{access_token}}
+
+#close a food stand
+###
+DELETE http://localhost:8095/api/park/stand/ef01c728-ce36-46b5-a110-84f53fdd9661 HTTP/1.1
+Authorization: Bearer {{access_token}}
+
+###
+DELETE http://localhost:8095/api/park/stand/e1f6b49d-849a-46e9-8b5b-cc47c9a5766a HTTP/1.1
+Authorization: Bearer {{access_token}}
+
+
+
+###
+GET http://localhost:8094/api/attraction/ef01c728-ce36-46b5-a110-84f53fdd9661 HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer {{access_token}}
+
+###
+GET http://localhost:8094/api/attractions/ HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer {{access_token}}
+
+
+
+### get price single ticket
+GET http://localhost:8090/api/ticket/price/dayPass HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer {{access_token}}
+
+
+
+
+### get price for multiple days
+#@GetMapping("/ticket/price/weekPass/startdate/{startDate}/endDate/{endDate}")
+GET http://localhost:8090/api/ticket/price/weekPass/startdate/2023-11-01/endDate/2023-11-20 HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer {{access_token}}
+
+###  buying a day ticket
+POST http://localhost:8090/api/dayPass/320/person/swag/date/2023-11-20 HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer {{access_token}}
+
+###  buying a week ticket
+POST http://localhost:8090/api/weekPass/320/person/xd/startDate/2023-11-20/endDate/2023-11-27 HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer {{access_token}}
+
+###
+GET http://localhost:8090/api/ticket/user/xd HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer {{access_token}}
+
+#testig purposes
+
+
+#delete a food stand
+###
+DELETE http://localhost:8095/api/park/stand/7f95562d-6d3d-424b-ba18-a5b5be5d4dda HTTP/1.1
+Authorization: Bearer {{access_token}}
+
+#delete again gives already deleted
+###
+DELETE http://localhost:8095/api/park/stand/7f95562d-6d3d-424b-ba18-a5b5be5d4dda HTTP/1.1
+Authorization: Bearer {{access_token}}
+
+#delete a food with wrong id gives also error
+###
+DELETE http://localhost:8095/api/park/stand/e1f6b49d-849a-46e9-8b5b-cc47c9a5766a HTTP/1.1
+Authorization: Bearer {{access_token}}
+
+
+### Leaving a attraction
+POST http://localhost:8094/api/leave/ticket/ef01c728-ce36-46b5-a110-84f53fdd9668/attraction/ef01c728-ce36-46b5-a110-84f53fdd9661 HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer {{access_token}}
+
+
+
+#enter the park wiht many
+###
+POST http://localhost:8099/api/admission/30 HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer {{access_token}}
+
+
+
+#leave the park with many
+###
+POST http://localhost:8099/api/dismission/30 HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer {{access_token}}
+
+
+#    @PostMapping("/attraction/{attractionUUID}/amount/{amount}")
+#enter the attraction wiht many
+###
+POST http://localhost:8094/api/attraction/ef01c728-ce36-46b5-a110-84f53fdd9661/amount/30 HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer {{access_token}}
+
+
+#enter the park wiht many
+###
+GET http://localhost:8095/api/park/activities/ HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer {{access_token}}
+
+
+####
+GET http://localhost:8094/api/attraction/activities HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer {{access_token}}
+
+
+
+
+
+
+
+
+
+
+
+###
+#Enter all attraction
+
+
+POST http://localhost:8094/api/attraction/ef01c728-ce36-46b5-a110-84f53fdd9661/amount/30 HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer {{access_token}}
